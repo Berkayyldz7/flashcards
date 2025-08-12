@@ -1,0 +1,62 @@
+curl -X POST http://localhost:5001/api/cards/import \
+-H "Content-Type: application/json" \
+-d '[
+  {
+    "term": "dropout rates toplu gönderim için",
+    "definitionEn": "The percentage of students who leave school before completion.",
+    "definitionTr": "Okulu tamamlamadan ayrılan öğrencilerin yüzdesi.",
+    "partOfSpeech": "noun",
+    "collocations": ["reduce dropout rates", "high dropout rates"],
+    "phraseBank": ["decrease dropout rates", "address dropout rates"],
+    "examples": [
+      { "en": "The university is working to reduce dropout rates.", "tr": "Üniversite, okuldan ayrılma oranlarını azaltmak için çalışıyor." }
+    ],
+    "ipa": "/ˈdrɒp.aʊt reɪts/",
+    "tags": ["education", "IELTS"]
+  },
+  {
+    "term": "academic performance",
+    "definitionEn": "How well a student performs in their studies.",
+    "definitionTr": "Bir öğrencinin derslerindeki başarısı.",
+    "partOfSpeech": "noun",
+    "collocations": ["improve academic performance", "measure academic performance"],
+    "phraseBank": ["boost academic performance", "evaluate academic performance"],
+    "examples": [
+      { "en": "Sleep quality can affect academic performance.", "tr": "Uyku kalitesi akademik başarıyı etkileyebilir." }
+    ],
+    "ipa": "/ˌæk.əˈdem.ɪk pəˈfɔː.məns/",
+    "tags": ["education", "IELTS"]
+  }
+]'
+
+,
+
+
+
+
+
+
+frontend/
+│
+├── public/
+│   └── index.html
+│
+├── src/
+│   ├── components/
+│   │   ├── Card.jsx         // Kart UI (Quizlet-style flip)
+│   │   ├── CardForm.jsx     // Yeni kart ekleme formu
+│   │   ├── CardList.jsx     // Kart listesi & filtreleme
+│   │   └── Navbar.jsx       // Üst menü
+│   │
+│   ├── pages/
+│   │   ├── Home.jsx         // Kartlar + öğrenme alanı
+│   │   └── ImportExport.jsx // JSON toplu ekleme/indirme
+│   │
+│   ├── services/
+│   │   └── api.js           // Backend ile fetch işlemleri
+│   │
+│   ├── App.jsx
+│   ├── index.css
+│   └── index.js
+│
+└── package.json
